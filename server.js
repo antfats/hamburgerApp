@@ -19,19 +19,6 @@ app.set('view engine', 'handlebars');
 var port = process.env.PORT || 3000;
 app.listen(port);
 
-//SQL get name of burgers to post on page
-burgerNames = function () {
-    connection.connect(function (err) {
-        if (err) throw err;
-        connection.query("SELECT burgerName FROM freshBurger",function(err,res,fields){
-            if (err) throw err;
-            console.log(res);
-        })
-    })
-}
-
-
-
 //Route's
 app.get("/", function (req, res) {
     res.render("index")
