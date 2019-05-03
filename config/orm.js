@@ -11,20 +11,23 @@ var orm = {
         })
     },
 
-
-
-    addBurger = function (name, bool) {
+    addBurger = function (name) {
         let queryString = "INSERT INTO freshburger VALUE ?";
-            connection.query(queryString[burgerName], function (err, res) {
-                if (err) throw err;
-            });
+        connection.query(queryString, [name], function (err, res) {
+            if (err) throw err;
+            console.log(res);
         });
     },
 
-    eatBurger = function () {
-        $("#eatBtn").click()
+    eatBurger = function (id) {
+        let queryString = "UPDATE freshburger WHERE id = ?";
+        connection.query(queryString, [id], function (err, res) {
+            if (err) throw err;
+            console.log(res);
+        })
     }
 }
+
 module.exports = orm;
 
 
