@@ -2,14 +2,7 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var sql = require("mysql");
 
-var connection = sql.createConnection({
-    host: "localhost",
-    user: "root",
-    port: '3306',
-    password: "Tdaca12-23*",
-    database: "burgers_db",
 
-})
 
 var app = express();
 

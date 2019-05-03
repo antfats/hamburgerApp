@@ -10,7 +10,7 @@ burgerNames = function () {
     })
 }
 
-addBurger = function (name, desc) {
+addBurger = function (name, bool) {
     conncetion.connect(function (err) {
         if (err) throw err;
         connection.query("INSERT INTO freshBurger VALUES (?,?)", function (err, res) {
@@ -22,6 +22,5 @@ addBurger = function (name, desc) {
 eatBurger = function () {
     $("#eatBtn").click()
 }
-export function burgerNames();
-export function addBurger();
 
+module.exports(addBurger(),burgerNames())
