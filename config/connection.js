@@ -5,7 +5,7 @@ var server = sql.createConnection({
     host: "localhost",
     user: "root",
     password: "Tdaca12-23*",
-    database: "burger_db",
+    database: "burgers_db",
     port: process.env.PORT || 3306
 });
 server.connect(function (err) {

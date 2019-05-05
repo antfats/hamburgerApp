@@ -1,17 +1,17 @@
 var orm = require("../config/orm")
-var burgerName = (req.param)
 
 var burger = {
-    showAll = function () {
-        $("#allBtn").click(function () {
-            orm.burgerNames();
+    showAll : function (cb) {
+        orm.burgerNames("freshBurger", function (res) {
+            cb(res);
         });
     },
-    addOne = function () {
-        $("#addBurger").click(function () {
-            orm.addBurger();
+    addOne : function (cb) {
+        orm.addBurger("freshBurger", function (res) {
+            cb(res);
         })
     }
 }
+
 
 module.exports = burger;

@@ -1,9 +1,9 @@
-var connection = require(server);
+var connection = require("./connection.js");
 
 //SQL get name of burgers to post on page
 var orm = {
 
-    burgerNames = function () {
+    burgerNames : function () {
         let queryString = "SELECT burgerName from freshBurger";
         connection.query(queryString, function (err, res) {
             if (err) throw err;
@@ -11,7 +11,7 @@ var orm = {
         })
     },
 
-    addBurger = function (name) {
+    addBurger : function (name) {
         let queryString = "INSERT INTO freshburger VALUE ?";
         connection.query(queryString, [name], function (err, res) {
             if (err) throw err;
@@ -19,7 +19,7 @@ var orm = {
         });
     },
 
-    eatBurger = function (id) {
+    eatBurger : function (id) {
         let queryString = "UPDATE freshburger WHERE id = ?";
         connection.query(queryString, [id], function (err, res) {
             if (err) throw err;
