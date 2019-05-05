@@ -1,9 +1,17 @@
 var orm = require("../config/orm")
-console.log(addBurger());
+var burgerName = (req.param)
 
+var burger = {
+    showAll = function () {
+        $("#allBtn").click(function () {
+            orm.burgerNames();
+        });
+    },
+    addOne = function () {
+        $("#addBurger").click(function () {
+            orm.addBurger();
+        })
+    }
+}
 
-// $(document).ready(function(){
-
-// console.log(allBurgers.res);
-
-// });
+module.exports = burger;

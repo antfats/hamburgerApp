@@ -1,8 +1,8 @@
 var connection = require(server);
 
-
 //SQL get name of burgers to post on page
 var orm = {
+
     burgerNames = function () {
         let queryString = "SELECT burgerName from freshBurger";
         connection.query(queryString, function (err, res) {
