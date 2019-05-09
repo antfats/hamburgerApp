@@ -13,12 +13,12 @@ app.set("view engine", "handlebars");
 
 
 
-var port = process.env.PORT||3000;
+var port = 3000;
 
 
 //Route's
 var routes = require("./controllers/burgers_controller");
-app.use(routes);
+app.use('/',routes);
 
 app.listen(port, function () {
     console.log("The server is listening on http://localhost:" + port);

@@ -1,13 +1,15 @@
 var orm = require("../config/orm")
 
 var burger = {
-    showAll : function (cb) {
-        orm.burgerNames("freshBurger", function (res) {
+    //Log all fresh burgers
+    all : function (cb) {
+        orm.all("freshburger", function (res) {
             cb(res);
         });
     },
-    addOne : function (cb) {
-        orm.addBurger("freshBurger", function (res) {
+    //eat burger
+    update : function (id,cb) {
+        orm.update("freshburger", function (res) {
             cb(res);
         })
     }
